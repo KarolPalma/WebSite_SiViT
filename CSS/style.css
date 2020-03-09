@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #333;
+    font-size: 1.3rem;
+    line-height: 1.3em;
+    margin: 0;
+    background-color: rgb(180, 212, 255);
+    padding-top: 30px;
+    transition: padding-top 0.5 ease;
+}
+
+head{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+footer{
+    background: rgb(255, 217, 1);
+    width: 100%;
+    overflow: hidden;
+    color: rgb(0, 0, 0);
+}
+
+p{
+    margin-bottom: 1.6em;
+    text-align: justify;
+}
+
+.centrado-texto{ /*Centralizar el texto*/
+    width: 85%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.encabezado-logo{ /* encabezado del logo */
+    background: rgb(44, 0, 241);
+    color: #fff;
+    padding: 30px;
+    padding-right: 100%;
+    margin: auto;
+    overflow: hidden;
+
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 30px;
+}
+
+.encabezado a{ /*Enlaces del Encabezado*/
+    color: #fff;
+    text-decoration: none;
+}
+
+.encabezado-centrado{ /*Centrar  encabezado*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.encabezado-menu{ /* encabezado del menu */
+    background: rgb(34, 0, 184);
+    color: #fff;
+    padding: 70px;
+    margin: auto;
+    overflow: hidden;
+    
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0px;
+}
+
+.menu ul { /* menu */
+    list-style:none;
+    position: absolute;
+    margin-left: 100px;
+}
+
+.menu ul li {    /* items del menu */
+    background-color:rgb(34, 0, 184);
+    border-radius: 15px;
+}
+   
+.menu ul a { /* enlaces del menu */
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    font-weight:400;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+   
+.menu ul li {  /*items del menu */
+    position: relative;
+    float: left;
+    margin:10px;
+    padding:10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+   
+.menu ul li:hover { /* efecto al pasar el ratón por los items del menu */
+    background:rgb(88, 51, 255);
+}
+
+.menu ul ul { /* menu desplegable */
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#eee;
+    padding:0;
+}
+   
+.menu ul ul li { /* items del menu desplegable */
+    float:none;
+    width:150px;
+}
+   
+.menu ul ul a { /* enlaces de los items del menu desplegable */
+    line-height:120%;
+ padding:10px 15px;
+}
+   
+.menu ul li:hover > ul { /* items del menu desplegable al pasar el ratón */
+    display:block;
+}
+
+header div a{
+    width: 60px; height: 60px;
+}
+
+header img:hover{
+    background-color: rgb(255, 217, 1);
+    border-bottom: 20px;
+    border-radius: 15px;
+    transition: all 0.4s;
+}
