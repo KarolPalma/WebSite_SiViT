@@ -18,6 +18,20 @@ head{
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+header img{
+    width: 70px;
+    height: 70px;
+    position:absolute;
+    top:10px;
+}
+
+header img:hover{
+    background-color: rgb(255, 217, 1);
+    border-bottom: 20px;
+    border-radius: 15px;
+    transition: all 0.4s;
+}
+
 footer{
     background: rgb(255, 217, 1);
     width: 100%;
@@ -25,10 +39,15 @@ footer{
     color: rgb(0, 0, 0);
 }
 
+img{
+    width: 100%;
+}
+
 p{
     margin-bottom: 1.6em;
     text-align: justify;
 }
+/*ENCABEZADO ESTATICO*/
 
 .centrado-texto{ /*Centralizar el texto*/
     width: 85%;
@@ -63,6 +82,8 @@ p{
     align-items: center;
     flex-wrap: wrap;
 }
+
+ /*ENCABEZADO MENU*/
 
 .encabezado-menu{ /* encabezado del menu */
     background: rgb(34, 0, 184);
@@ -113,6 +134,8 @@ p{
     background:rgb(88, 51, 255);
 }
 
+/*ENCABEZADO MENU DESPLEGABLE*/
+
 .menu ul ul { /* menu desplegable */
     display:none;
     position:absolute;
@@ -136,13 +159,119 @@ p{
     display:block;
 }
 
-header div a{
-    width: 60px; height: 60px;
+/*SLIDER*/
+
+.contenedor-slider{
+    position: relative;
+
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+
 }
 
-header img:hover{
-    background-color: rgb(255, 217, 1);
-    border-bottom: 20px;
-    border-radius: 15px;
-    transition: all 0.4s;
+.slider{ /*Animaciones de Slider*/
+    display: flex;
+    transform: translate3d(0, 0, 0);
+    transition: all 600ms;
+    animation-name: autoplay;
+    animation-duration: 6.5s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+.item-slider{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    flex-grow: 0;
+    max-width: 100%;
+}
+
+.paginacion-slider{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.paginacion-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    background: rgb(245, 221, 6);
+    margin: 0 10px;
+    text-align: center;
+    transition: all 300ms;
+}
+
+.paginacion-item:hover{
+    transform: scale(2);
+}
+
+.paginacion-item img{
+    display: inline-block;
+    max-width: none;
+    height: 100%;
+    transform: scale(1);
+    opacity: 0;
+    transition: all 300ms;
+}
+
+.paginacion-item:hover img{
+    opacity: 1;
+    transition: scale(1);
+}
+
+input[id="1"]:checked ~ .slider{
+    animation: none;
+    transform: translate3d(0,0,0);
+}
+
+input[id="1"]:checked ~ .paginacion-slider .paginacion-item[for="1"]{
+    background: #fff;
+}
+
+input[id="2"]:checked ~ .slider{
+    animation: none;
+    transform: translate3d(calc(-100% * 1),0,0);
+}
+
+input[id="2"]:checked ~ .paginacion-slider .paginacion-item[for="2"]{
+    background: #fff;
+}
+
+input[id="3"]:checked ~ .slider{
+    animation: none;
+    transform: translate3d(calc(-100% * 2),0,0);
+}
+
+input[id="3"]:checked ~ .paginacion-slider .paginacion-item[for="3"]{
+    background: #fff;
+}
+
+@keyframes autoplay{ 
+    33%{
+        transform: translate3d(calc(-100% * 0), 0, 0);
+    }
+
+    66%{
+        transform: translate3d(calc(-100% * 1), 0, 0);
+    }
+
+    100%{
+        transform: translate3d(calc(-100% * 2), 0, 0);
+    }
 }
